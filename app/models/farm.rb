@@ -8,4 +8,11 @@ class Farm < ActiveRecord::Base
 
   has_many :products
   accepts_nested_attributes_for :products, reject_if: :all_blank, allow_destroy: true
+
+  geocoded_by :full_street_address
+  after_validation :geocode
+
+  def full_street_address
+    "#{address}, #{zip_code} #{place}, Schweiz"
+  end
 end

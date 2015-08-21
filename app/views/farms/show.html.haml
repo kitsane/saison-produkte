@@ -16,6 +16,11 @@
       %h4
         = @farm.zip_code
         = @farm.place
+    - if @farm.latitude.present? && @farm.longitude.present?
+      .plate
+        = link_to "https://maps.google.com/?q=#{@farm.full_street_address}", target: '_blank' do
+          = image_tag google_maps_image(@farm.latitude, @farm.longitude), class: 'img-responsive'
+
     - if @farm.products.exists?
       .plate
         %h3 Sortiment

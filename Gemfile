@@ -14,6 +14,7 @@ gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'cocoon'
 gem 'devise'
+gem 'geocoder'
 gem 'haml-rails'
 gem 'simple_form'
 
