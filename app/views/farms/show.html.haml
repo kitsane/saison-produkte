@@ -1,0 +1,20 @@
+- content_for :farm_image do
+  farm-image
+
+- content_for :background_image do
+  = "background-image: url(#{@farm.image_url})"
+  
+= link_to 'Edit', edit_farm_path(@farm)
+
+.plate-wrapper
+  .text-center
+    .plate
+      %h3 Willkommen
+    .plate
+      %h1
+        = @farm.name
+      %h4
+        = @farm.address
+      %h4
+        = @farm.zip_code
+        = @farm.place

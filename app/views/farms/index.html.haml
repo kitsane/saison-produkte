@@ -1,0 +1,17 @@
+%h1 Listing farms
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Address
+      %th Zip code
+      %th Place
+
+  %tbody
+    - @farms.each do |farm|
+      %tr
+        %td= farm.name
+        %td= farm.address
+        %td= farm.zip_code
+        %td= farm.place

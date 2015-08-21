@@ -1,7 +1,7 @@
 !!!
 %html{ lang: 'en'}
   = render 'head'
-  %body
+  %body{ class: yield(:farm_image), style: yield(:background_image) }
     .container
       = render 'notifications' if flash.present?
       = yield
