@@ -31,5 +31,8 @@ module SaisonProdukte
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # Set stylesheetsyntax to sass
+    config.sass.preffered_syntax = :sass
   end
 end
