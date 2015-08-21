@@ -5,4 +5,7 @@ class Farm < ActiveRecord::Base
 
   validates :name, :image, :address, :zip_code, :place, presence: true
   validates :name, uniqueness: true
+
+  has_many :products
+  accepts_nested_attributes_for :products, reject_if: :all_blank, allow_destroy: true
 end

@@ -53,6 +53,9 @@ class FarmsController < ApplicationController
   end
 
   def farm_params
-    params.require(:farm).permit(:name, :address, :zip_code, :place, :image).merge!(user: current_user)
+    params.require(:farm).permit(
+      :name, :address, :zip_code, :place, :image,
+      products_attributes: [:id, :name, :_destroy]
+    ).merge!(user: current_user)
   end
 end
