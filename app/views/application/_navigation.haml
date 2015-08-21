@@ -1,0 +1,11 @@
+%nav.navbar{ class: "#{ 'navbar-default' if current_user.present? }" }
+  .container-fluid
+    .navbar-header
+      = link_to 'Saison Produkte', root_path, class: 'navbar-brand'
+    - if current_user.present?
+      .collapse.navbar-collapse
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            = link_to 'Edit', edit_farm_path(current_user.farm)
+          %li
+            = link_to 'Logout', destroy_user_session_path, :method => :delete

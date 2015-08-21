@@ -2,6 +2,7 @@
 %html{ lang: 'en'}
   = render 'head'
   %body{ class: yield(:farm_image), style: yield(:background_image) }
+    = render 'navigation'
     .container
       = render 'notifications' if flash.present?
       = yield
