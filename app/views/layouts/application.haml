@@ -2,4 +2,6 @@
 %html{ lang: 'en'}
   = render 'head'
   %body
-    = yield
+    .container
+      = render 'notifications' if flash.present?
+      = yield
