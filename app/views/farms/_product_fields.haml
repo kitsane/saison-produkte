@@ -1,3 +1,6 @@
-.nested-fields
-  = f.input :name
-  = link_to_remove_association "remove product", f
+.row
+  .nested-fields
+    .col-md-10.col-sm-8.col-xs-8
+      = f.input :name
+    .col-md-2.col-sm-4.col-xs-4
+      = f.input :_destroy, as: :boolean

@@ -18,10 +18,11 @@
       %h4
         = @farm.zip_code
         = @farm.place
-    .plate
-      %h3 Sortiment
-    - @farm.products.each do |product|
+    - if @farm.products.exists?
       .plate
-        %h3
-          %strong
-            = product.name
+        %h3 Sortiment
+      - @farm.products.each do |product|
+        .plate
+          %h3
+            %strong
+              = product.name
