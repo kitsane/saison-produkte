@@ -1,0 +1,12 @@
+.row
+  .col-md-offset-3.col-md-6
+    .panel.panel-default
+      .panel-heading
+        %h3.panel-title Sign up
+      .panel-body
+        = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          = f.error_notification
+          = f.input :email, required: true, autofocus: true
+          = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
+          = f.input :password_confirmation, required: true
+          = f.button :submit, "Sign up"
