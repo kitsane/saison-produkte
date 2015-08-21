@@ -50,7 +50,6 @@ class FarmsController < ApplicationController
 
   def set_farm
     @farm = Farm.find(params[:id])
-    @farm.products.build unless @farm.products.present?
   end
 
   def farm_params
