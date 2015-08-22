@@ -8,8 +8,8 @@ gem 'uglifier'
 
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'jbuilder'
 
+gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
 gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'cocoon'

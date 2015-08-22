@@ -4,6 +4,11 @@ class FarmsController < ApplicationController
 
   def index
     @farms = Farm.all
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @farms }
+    end
   end
 
   def show
