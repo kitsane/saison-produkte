@@ -5,8 +5,9 @@
     .collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-right
         - if current_user.present?
-          %li
-            = link_to 'Edit', edit_farm_path(current_user.farm)
+          - if current_user.farm.persisted?
+            %li
+              = link_to 'Edit', edit_farm_path(current_user.farm)
           %li
             = link_to 'Logout', destroy_user_session_path, :method => :delete
         - else
