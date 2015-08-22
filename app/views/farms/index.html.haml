@@ -1,17 +1,25 @@
-%h1 Listing farms
+#map
 
-%table
+%table.table
   %thead
     %tr
       %th Name
       %th Address
-      %th Zip code
       %th Place
+      %th Products
 
   %tbody
     - @farms.each do |farm|
       %tr
-        %td= farm.name
+        %td= link_to farm.name, farm_path(farm)
         %td= farm.address
-        %td= farm.zip_code
-        %td= farm.place
+        %td
+          = farm.zip_code
+          = farm.place
+        %td
+          = farm.products.map(&:name).join(' ')
+
+:javascript
+  $( document ).ready(function() {
+    initMap()
+  })
