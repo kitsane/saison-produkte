@@ -17,7 +17,7 @@
           = farm.zip_code
           = farm.place
         %td
-          = farm.products.map(&:name).join(' ')
+          = farm.products.map(&:name).join(', ')
 
 :javascript
   $( document ).ready(function() {
