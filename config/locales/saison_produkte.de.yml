@@ -1,0 +1,32 @@
+de:
+  application:
+    navigation:
+      season: Saison
+      products: Produkte
+  crud:
+    action:
+      edit: Hof bearbeiten
+      register: Registrieren
+      sign_in: Anmelden
+      sign_out: Abmelden
+      add_product: Produkt hinzufügen
+  activerecord:
+    models:
+      farm: Hof
+      product: Produkt
+    attributes:
+      farm:
+        name: Hofname 
+        image: Bild
+        address: Adresse
+        zip_code: PLZ
+        place: Ort
+        products: Sortiment
+        welcome: Wilkommen
+      product: 
+        name: Bezeichnung
+        _destroy: Löschen
+  farms:
+    show:
+      welcome: Wilkommen
+      products: Sortiment

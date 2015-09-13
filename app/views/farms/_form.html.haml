@@ -16,14 +16,14 @@
       = f.input :place
   .row
     .col-md-12
-      %h3 Products
+      %h3= t_attr(:products)
   #products
     = f.simple_fields_for :products do |product|
       = render 'product_fields', f: product
   .row
     .col-md-12
       .links
-        = link_to_add_association 'add product', f, :products, class: 'btn btn-success'
+        = link_to_add_association t_action('.add_product'), f, :products, class: 'btn btn-success'
   .row
     .col-md-12
       = f.button :submit

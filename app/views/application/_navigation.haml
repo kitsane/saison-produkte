@@ -2,18 +2,18 @@
   .container-fluid
     .navbar-header
       = link_to root_path, class: 'navbar-brand' do
-        %span.brand-saison Saison
-        %span.brand-produkte Produkte
+        %span.brand-saison= t '.season'
+        %span.brand-produkte= t '.products'
     .collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-right
         - if current_user.present?
-          - if current_user.farm.present?
+          - if current_user.farm.present? && current_user.farm.persisted?
             %li
-              = link_to 'Edit', edit_farm_path(current_user.farm)
+              = link_to t_action(:edit), edit_farm_path(current_user.farm)
           %li
-            = link_to 'Logout', destroy_user_session_path, :method => :delete
+            = link_to t_action(:sign_out), destroy_user_session_path, :method => :delete
         - else
           %li
-            = link_to 'Register', new_user_registration_path
+            = link_to t_action(:register), new_user_registration_path
           %li
-            = link_to 'Login', new_user_session_path
+            = link_to t_action(:sign_in), new_user_session_path

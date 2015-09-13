@@ -7,7 +7,7 @@
 .plate-wrapper
   .text-center
     .plate
-      %h3 Willkommen
+      %h3= t('.welcome')
     .plate
       %h1
         = @farm.name
@@ -23,7 +23,7 @@
 
     - if @farm.products.exists?
       .plate
-        %h3 Sortiment
+        %h3= t '.products'
       - @farm.products.each do |product|
         .plate
           %h3

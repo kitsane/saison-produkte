@@ -5,10 +5,10 @@
     %table.table
       %thead
         %tr
-          %th Name
-          %th Address
-          %th Place
-          %th Products
+          %th= t_attr :name
+          %th= t_attr :address
+          %th= t_attr :place
+          %th= t_attr :products
 
       %tbody
         - @farms.each do |farm|
