@@ -5,7 +5,7 @@
     .collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-right
         - if current_user.present?
-          - if current_user.farm.persisted?
+          - if current_user.farm.present?
             %li
               = link_to 'Edit', edit_farm_path(current_user.farm)
           %li
