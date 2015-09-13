@@ -18,6 +18,7 @@ gem 'devise-i18n'
 gem 'geocoder'
 gem 'haml-rails'
 gem 'rails-i18n'
+gem 'quiet_assets'
 gem 'simple_form'
 
 group :development, :test do
