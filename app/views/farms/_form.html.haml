@@ -5,9 +5,7 @@
         = f.error_notification
   .row
     .col-md-12
-      = image_tag @farm.image_url, class: 'img-responsive' if @farm.image?
-      = f.file_field :image
-      = f.hidden_field :image_cache
+      = f.input :image, as: :image_preview
     .col-md-12
       = f.input :name
     .col-md-12

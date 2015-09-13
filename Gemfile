@@ -21,6 +21,7 @@ gem 'i18n_rails_helpers'
 gem 'rails-i18n'
 gem 'quiet_assets'
 gem 'simple_form'
+gem 'simple_form_fancy_uploads'
 
 group :development, :test do
   gem 'better_errors'
