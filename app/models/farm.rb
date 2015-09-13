@@ -15,4 +15,6 @@ class Farm < ActiveRecord::Base
   def full_street_address
     "#{address}, #{zip_code} #{place}, Schweiz"
   end
+
+  scope :has_latitude_and_longitude, -> { where.not(latitude: nil, longitude: nil) }
 end

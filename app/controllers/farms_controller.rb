@@ -7,7 +7,7 @@ class FarmsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render json: @farms }
+      format.json { render json: @farms.has_latitude_and_longitude }
     end
   end
 
