@@ -1,10 +1,11 @@
-.row
-  .col-md-offset-3.col-md-6
-    .panel.panel-default
-      .panel-heading
-        %h3.panel-title Forgot your password?
-      .panel-body
-        = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-          = f.error_notification
-          = f.input :email, required: true, autofocus: true
-          = f.button :submit, "Send me reset password instructions"
+.container
+  .row
+    .col-md-offset-3.col-md-6
+      .panel.panel-default
+        .panel-heading
+          %h3.panel-title Forgot your password?
+        .panel-body
+          = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+            = f.error_notification
+            = f.input :email, required: true, autofocus: true
+            = f.button :submit, "Send me reset password instructions"

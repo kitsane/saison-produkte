@@ -1,23 +1,25 @@
 #map
 
-%table.table
-  %thead
-    %tr
-      %th Name
-      %th Address
-      %th Place
-      %th Products
+.container
+  .row
+    %table.table
+      %thead
+        %tr
+          %th Name
+          %th Address
+          %th Place
+          %th Products
 
-  %tbody
-    - @farms.each do |farm|
-      %tr
-        %td= link_to farm.name, farm_path(farm)
-        %td= farm.address
-        %td
-          = farm.zip_code
-          = farm.place
-        %td
-          = farm.products.map(&:name).join(', ')
+      %tbody
+        - @farms.each do |farm|
+          %tr
+            %td= link_to farm.name, farm_path(farm)
+            %td= farm.address
+            %td
+              = farm.zip_code
+              = farm.place
+            %td
+              = farm.products.map(&:name).join(', ')
 
 :javascript
   $( document ).ready(function() {
