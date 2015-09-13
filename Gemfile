@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.2'
 
 gem 'rails'
 
@@ -30,5 +31,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'pry-rails'
 end
+
+gem 'rails_12factor', group: :production
 
 gem 'sdoc', group: :doc
