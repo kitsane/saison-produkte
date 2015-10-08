@@ -12,12 +12,12 @@ function setMarkers(map) {
     for (var i = 0; i < json['data'].length; i++) {
       var contentString =
         '<a href="/' + json['data'][i]['type'] + '/' + json['data'][i]['id'] + '">' +
-        json['data'][i]['attributes']['name'] + '<br>' +
-        json['data'][i]['attributes']['address'] + '<br>' +
-        json['data'][i]['attributes']['zip_code'] + ' ' +
-        json['data'][i]['attributes']['place'] + '</a>'
+                       json['data'][i]['attributes']['name'] + '<br>' +
+                       json['data'][i]['attributes']['address'] + '<br>' +
+                       json['data'][i]['attributes']['zip_code'] + ' ' +
+                       json['data'][i]['attributes']['place'] + '</a>'
 
-      var infowindow = new google.maps.InfoWindow({
+      var infoWindow = new google.maps.InfoWindow({
         content: contentString
       });
 
@@ -27,11 +27,13 @@ function setMarkers(map) {
           lng: json['data'][i]['attributes']['longitude']
         },
         map: map,
-        title: json['data'][i]['attributes']['name']
+        title: json['data'][i]['attributes']['name'],
+        info: contentString
       });
 
-      marker.addListener('click', function() {
-        infowindow.open(map, marker);
+      google.maps.event.addListener(marker, 'click', function() {
+         infoWindow.setContent( this.info );
+         infoWindow.open( map, this );
       });
     }
   })
